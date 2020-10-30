@@ -1,5 +1,5 @@
 # MCAutoEffect
-A wrapper for Minecraft 1.16.3's Effect type that makes special functionality easy.
+A wrapper for Minecraft 1.16.3's Effect type that makes special cosmetic functionality easy.
 
 # What does it offer?
 Glad you asked. Here's the to-do list:
