@@ -83,7 +83,7 @@ public interface IAutoEffect extends IForgeEffect {
 	 * @return The text color to use when rendering the display name of this effect. Default is white 0xFFFFFF
 	 */
 	@OnlyIn(Dist.CLIENT)
-	public default int GetTextColor() {
+	public default int GetNameColor() {
 		return 0xFFFFFF;
 	}
 	
@@ -145,13 +145,13 @@ public interface IAutoEffect extends IForgeEffect {
 		Minecraft mc = Minecraft.getInstance();
 		if (type == EffectTextDisplayType.STOCK) {
 			// Render just like MC does, albeit with our custom colors.
-			mc.fontRenderer.func_238406_a_(mStack, displayName, (float)(x + 10 + 18), (float)(y + 6), GetTextColor(), true);
+			mc.fontRenderer.func_238406_a_(mStack, displayName, (float)(x + 10 + 18), (float)(y + 6), GetNameColor(), true);
 	        String durationString = GetCustomDurationString(effect);
 	        mc.fontRenderer.func_238406_a_(mStack, durationString, (float)(x + 10 + 18), (float)(y + 6 + 10), GetTimeColor(), true);
 	        
 		} else if (type == EffectTextDisplayType.NAME_ONLY) {
 			// Render only the potion's name. Omit the time.
-			mc.fontRenderer.func_238406_a_(mStack, displayName, (float)(x + 10 + 18), (float)(y + 12), GetTextColor(), true);
+			mc.fontRenderer.func_238406_a_(mStack, displayName, (float)(x + 10 + 18), (float)(y + 12), GetNameColor(), true);
 			
 		} else if (type == EffectTextDisplayType.TIME_ONLY) {
 			// Render only the potion's time. Omit the name.
